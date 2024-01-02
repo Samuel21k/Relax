@@ -13,6 +13,7 @@ public class RelaxTask {
 		List <Integer> all_wins = new ArrayList<Integer>(); //List to place all wins
 		int wins = 0;					//used to keep record of wins
 		int win = 1;
+		int loss = -1;
 		int count = 0;					//counting how many rounds until reaching 1000000
 		int roll = 0;					//counter for how many rolls has there been (max 4)
 		double rounds = 1000000;		
@@ -25,7 +26,7 @@ public class RelaxTask {
 										
 				wins+=1 ;				
 				
-				System.out.println("$"+ wins);
+				System.out.println("$"+ wins +"(+1)");
 				
 				all_wins.add(win);
 				count+=1;
@@ -43,7 +44,10 @@ public class RelaxTask {
 			
 			
 		} 	else {						//add 1 to the counter of rolls
+			wins-=1;
 			
+			System.out.println("$"+ wins +"(-1)");
+			all_wins.add(loss);
 				roll+=1;
 		}
 		
